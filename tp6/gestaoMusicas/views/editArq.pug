@@ -1,0 +1,23 @@
+extends layout
+block content
+    .w3-container
+        h1.w3-container.w3-black Modificar Música
+        .w3-card-4
+            .w3-container
+                form.w3-container(action='/'+i.id method='POST')
+                    label
+                        b Título
+                    input.w3-input.w3-border.w3-white(type="text" name='tit' value=i.tit)
+                    label
+                        b Província
+                    input.w3-input.w3-border.w3-white(type="text" name='prov' value=i.prov)
+                    label
+                        b Local
+                    input.w3-input.w3-border.w3-white(type="text" name='local' value=i.local)
+                    label
+                        b Duração
+                    input.w3-input.w3-border.w3-white(type="text" name='duracao' value=i.duracao)
+                    input.w3-btn.w3-blue(type="submit" value='Alterar')
+        footer.w3-container.w3-black
+            address
+                a(href="/#") Voltar à página inicial

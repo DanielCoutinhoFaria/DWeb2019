@@ -1,0 +1,46 @@
+extends layout
+block content
+  .w3-container
+  .w3-card-4
+    h1.w3-container.w3-brown Gestão de Músicas
+    .w3-card-4
+      .w3-card-4
+        h3.w3-container.w3-brown Adicionar uma Nova Música
+        form.w3-container(action='/' method='POST')
+            label
+              b Província
+            input.w3-input.w3-border.w3-white(type='text' name='prov')
+            label
+              b Título
+            input.w3-input.w3-border.w3-white(type='text' name='tit')
+            label
+              b Local
+            input.w3-input.w3-border.w3-white(type='text' name='local')
+            label
+              b Músico
+            input.w3-input.w3-border.w3-white(type='text' name='musico')
+            label
+              b Duração
+            input.w3-input.w3-border.w3-white(type='text' name='duracao')
+            input.w3-btn.w3-blue(type='submit' value='Adicionar' style="margin-left: 94%")
+        h3.w3-container.w3-brown Lista das Músicas
+        table.w3-table-all(id='musicTable')
+          tr
+            th Província
+            th Título
+            th Local
+            th Músico
+            th Duração
+          each i,position in lista
+            tr
+              td= i.prov
+              td= i.tit
+              td= i.local
+              td= i.musico
+              td= i.duracao
+              td
+                  a.w3-blue.w3-square.w3-button(name=i.id href= "/" + i.id) Detalhes
+              td
+                  button.w3-button.w3-square.w3-red(onclick="apagaItem('" + i.id + "')") Apagar
+    footer.w3-container.w3-black
+      address Gerado por Daniel Faria
