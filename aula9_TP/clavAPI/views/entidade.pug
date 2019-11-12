@@ -1,0 +1,71 @@
+extends layout
+
+block content
+  div.w3-container.w3-brown
+    h1 Nobel
+      div.w3-bar-block.w3-brown
+        table.w3-table.w3-medium
+            tr
+                th 
+                  u Estado
+                th 
+                  u Sigla
+                th 
+                  u SIOE
+                th 
+                  u Designacao
+                th 
+                  u Internacional
+                tr
+                    td= e.estado
+                    td= e.sigla
+                    td= e.sioe
+                    td= e.designacao
+                    td= e.internacional
+        br
+      div.w3-bar-block.w3-brown
+        table.w3-table.w3-medium
+            tr
+                th 
+                  u Sigla
+                th 
+                  u Designacao
+                th 
+                  u Id
+            each t in e2
+                tr
+                    td= t.sigla
+                    td= t.designacao
+                    td= t.id
+                    
+        br
+      div.w3-bar-block.w3-brown
+        table.w3-table.w3-medium
+            tr
+                th 
+                  u Codigo
+                th 
+                  u Titulo
+            each d in e3
+                tr
+                    td= d.codigo
+                    td= d.titulo
+        br
+      div.w3-bar-block.w3-brown
+        table.w3-table.w3-medium
+            tr
+                th 
+                  u Tipo Par
+                th 
+                  u Codigo
+                th 
+                  u Titulo
+            each p in e4
+                tr
+                    td= p.tipoPar
+                    td= p.codigo
+                    td= p.titulo
+      footer.w3-footer.w3-medium
+        b By: Daniel Faria
+        br
+        a(href="http://localhost:3010/") Voltar ao Início
