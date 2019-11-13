@@ -11,20 +11,17 @@ var Nobel = require('../controllers/nobel')
 
 router.get('/premios', function(req, res) {
   if(req.query.categorias == undefined){
-    console.log("testeteste")
     Nobel.listar()
     .then(dados => res.jsonp(dados))
     .catch(erro => res.status(500).jsonp(erro))
   }
   if(req.query.categorias != undefined && req.query.year == undefined){
-    console.log("testeteste22222")
-    Nobel.consultarCategoria(req.params.categorias)
+    Nobel.consultarCategoria(req.query.categorias)
     .then(dados => res.jsonp(dados))
     .catch(erro => res.status(500).jsonp(erro))
   }
   if(req.query.categoria != undefined && req.query.year != undefined){
-    console.log("testeteste3333")
-    Nobel.consultarCategoriaPorAno(req.params.categorias, req.params.year)
+    Nobel.consultarCategoriaPorAno(req.query.categorias, req.query.year)
     .then(dados => res.jsonp(dados))
     .catch(erro => res.status(500).jsonp(erro))
   }
