@@ -1,0 +1,89 @@
+extends layout
+
+block content
+  div.w3-container.w3
+  h1.w3-container.w3- Gestão de Entidades
+    .w3-card-4
+      .w3-card-4
+        h3.w3-container.w3-brown Informação base da Entidade
+        table.w3-table.w3-medium
+            tr
+                th 
+                  u Estado
+                th 
+                  u Sigla
+                th 
+                  u SIOE
+                th 
+                  u Designacao
+                th 
+                  u Internacional
+                tr
+                    td= e.estado
+                    td= e.sigla
+                    td= e.sioe
+                    td= e.designacao
+                    td= e.internacional
+        br
+      div.w3-bar-block.w3
+       .w3-card-4
+       .w3-card-4
+        h3.w3-container.w3-brown Tipologias Pertecente
+        table.w3-table.w3-medium
+            tr
+                th 
+                  u Sigla
+                th 
+                  u Designacao
+                th 
+                  u Id
+            each t in e2
+                tr
+                    td= t.sigla
+                    td= t.designacao
+                    td= t.id
+                    td
+                       a.w3-blue.w3-square.w3-button(href="http://clav-api.dglab.gov.pt/api/entidades/"+t.id+"/tipologias?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1Nzg4NjAwNTQsImV4cCI6MTU4MTQ1MjA1NH0.HIlH4_Ao6504qaLhhbZ2_OtDzaZaG5FeYy-Yc2d9lwQ") Ver na API
+                    
+        br
+      div.w3-bar-block.w3
+       .w3-card-4
+       .w3-card-4
+        h3.w3-container.w3-brown Processos onde é Dono
+        table.w3-table.w3-medium
+            tr
+                th 
+                  u Codigo
+                th 
+                  u Titulo
+            each d in e3
+                tr
+                    td= d.codigo
+                    td= d.titulo
+                    td
+                       a.w3-blue.w3-square.w3-button(href="http://clav-api.dglab.gov.pt/api/entidades/c"+ d.codigo +"/intervencao/dono?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1Nzg4NjAwNTQsImV4cCI6MTU4MTQ1MjA1NH0.HIlH4_Ao6504qaLhhbZ2_OtDzaZaG5FeYy-Yc2d9lwQ") Ver na API
+
+        br
+      div.w3-bar-block.w3
+       .w3-card-4
+       .w3-card-4
+        h3.w3-container.w3-brown Processos onde é Participante 
+        table.w3-table.w3-medium
+            tr
+                th 
+                  u Tipo Par
+                th 
+                  u Codigo
+                th 
+                  u Titulo
+            each p in e4
+                tr
+                    td= p.tipoPar
+                    td= p.codigo
+                    td= p.titulo
+                    td
+                       a.w3-blue.w3-square.w3-button(href="http://clav-api.dglab.gov.pt/api/entidades/c"+ p.codigo +"/intervencao/participante?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1Nzg4NjAwNTQsImV4cCI6MTU4MTQ1MjA1NH0.HIlH4_Ao6504qaLhhbZ2_OtDzaZaG5FeYy-Yc2d9lwQ") Ver na API
+      footer.w3-footer.w3-medium
+        b By: Daniel Faria
+        br
+        a(href="http://localhost:8888/") Voltar ao Início
